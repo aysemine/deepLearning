@@ -28,7 +28,7 @@ def get_data_loaders(batch_size = 64): # data size for each iterations
 
     return train_loader, test_loader
 
-train_loader, test_loader = get_data_loaders()
+# train_loader, test_loader = get_data_loaders()
 
 # data visualization
 
@@ -41,7 +41,7 @@ def visualize_samples(loader, n):
         axes[i].set_title(f"Label: {labels[i].item()}")
     plt.show()
 
-visualize_samples(train_loader, 4)
+# visualize_samples(train_loader, 4)
 
 class NeuralNetwork(nn.Module):
 
@@ -75,7 +75,7 @@ class NeuralNetwork(nn.Module):
 
         return x
     
-model = NeuralNetwork().to(device)
+# model = NeuralNetwork().to(device)
 
 # loss function
 
@@ -84,7 +84,7 @@ define_loss_and_optimizer = lambda model: (
     optim.Adam(model.parameters(), lr=0.001)
 )
 
-criterion, optimizer = define_loss_and_optimizer(model)
+# criterion, optimizer = define_loss_and_optimizer(model)
 
 def train_model(model, train_loader, criterion, optimizer, epochs = 10):
 
@@ -126,7 +126,7 @@ def train_model(model, train_loader, criterion, optimizer, epochs = 10):
     plt.legend()
     plt.show()
 
-train_model(model, train_loader, criterion, optimizer, epochs=5)
+# train_model(model, train_loader, criterion, optimizer, epochs=5)
 
 def test_model(model, test_loader):
     model.eval()
@@ -146,7 +146,7 @@ def test_model(model, test_loader):
 
     print(f"Test accuracy: {100*correct/total:.3f}")
 
-test_model(model, test_loader)
+# test_model(model, test_loader)
 
 # %% main
 
