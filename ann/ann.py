@@ -141,7 +141,7 @@ def test_model(model, test_loader):
 
             predictions = model(images)
             _, predicted = torch.max(predictions, 1)
-            total += labels.size()
+            total += labels.size(0)
             correct += (predicted == labels).sum().item()
 
     print(f"Test accuracy: {100*correct/total:.3f}")
